@@ -52,3 +52,22 @@ app.get("/api/search", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Sunucu ${PORT} portunda çalışıyor`));
 
+const axios = require('axios');
+const cheerio = require('cheerio');
+
+const url = 'http://forspanel.pro'; // veri çekeceğimiz sayfa
+
+axios.get(url)
+  .then(response => {
+    const html = response.data;
+    const $ = cheerio.load(html);
+
+    // Örnek: Sayfadaki tüm başlıkları çekelim
+    $('h1, h2, h3').each((i, el) => {
+      console.log($(el).text());
+    });
+  })
+  .catch(err => {
+    console.error('Sayfa yüklenirken hata:', err);
+  });
+
