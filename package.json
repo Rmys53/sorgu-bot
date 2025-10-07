@@ -1,1 +1,17 @@
-
+{
+  "name": "forspanel-pro",
+  "version": "1.0.0",
+  "description": "Forspanel sorgu botu projesi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["sorgu", "bot", "panel"],
+  "author": "SeninAdın",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.7.0",
+    "dotenv": "^16.3.1"
+  }
+}
